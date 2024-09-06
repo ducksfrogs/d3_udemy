@@ -1,0 +1,18 @@
+// flex items => children
+body{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+section{
+    width: 10rem;
+    background-color: lightgray;
+    padding: 1.5rem;
+    margin: 1rem;
+    color: white;
+}
+
+div.content{
+    background-color: navy;
+    padding: 1rem;
+}
