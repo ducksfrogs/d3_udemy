@@ -1,0 +1,17 @@
+    "autoprefixer"
+    "css-loader":
+    "html-webpack-plugin": 
+    "postcss-loader":
+    "sass":
+    "sass-loader": 
+    "style-loader":
+    "webpack": 
+    "webpack-cli":
+    "webpack-dev-server":
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.7",
+    "bootstrap": "^5.2.3",
+    "d3": "^7.9.0"
+  }
+}
