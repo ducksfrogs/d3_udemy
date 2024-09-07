@@ -30,15 +30,25 @@ const svg = canvas.append("svg")
 
 svg.append("text")
     .text("Hello there")
+    .attr("text-anchor", "start")
     .attr("fill", "green")
+    .attr('stroke', 'yellow')
     .attr("font-size", 60)
     .attr("x", 100)
     .attr("y", 150);
 
-
 svg.append("text")
     .text("James")
+    .attr("text-anchor", "middle")
     .attr("fill", "green")
     .attr("font-size", 60)
     .attr("x", 100)
     .attr("y", 250);
+
+svg.append("text")
+    .text("momomo!")
+    .attr("text-anchor", "end")
+    .attr("fill", "green")
+    .attr("font-size", 60)
+    .attr("x", 100)
+    .attr("y", 350);

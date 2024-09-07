@@ -1,6 +1,7 @@
 import "../style/styles.scss";
 
-import "./first.js";
+// import "./first.js";
+import './sec.js';
 // import * as d3 from 'd3';
 
 
