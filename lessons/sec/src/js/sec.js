@@ -17,7 +17,7 @@ const rect = svg.selectAll("rect");
 
 
 
-rect.attr("width", 20)
+rect.attr("width", 25)
     .data(dataArray)
     .attr("height", 100)
     .attr("fill", "green")
@@ -26,8 +26,10 @@ rect.attr("width", 20)
     //     return d;
     // })
     .attr("x", function(d , i) { 
+
+        console.log(i);
         console.log(d);
-        return i*24 } );
+        return i*21 } );
                     
 
 console.log(rect);
