@@ -3,14 +3,6 @@ import * as d3 from 'd3';
 const canvas = d3.select(".canva");
 
 
-// var dataArray = [
-//     {width: 25, height: 15, fill: 'pink'},
-//     {width: 25, height: 25, fill: 'purple'},
-//     {width: 25, height: 115, fill: 'red'},
-//     {width: 25, height: 5, fill: 'grey'},
-//     {width: 25, height: 35, fill: 'pinl'},
-// ];
-
 const svg = canvas.append("svg")
             // .attr('width', "50%")
             .attr("width", 500)
