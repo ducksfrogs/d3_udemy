@@ -2,6 +2,7 @@ import "../style/styles.scss";
 
 
 import "./third";
+// import "./4";
 // import "./first.js";
 // import './sec.js';
 // import * as d3 from 'd3';

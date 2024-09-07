@@ -4,10 +4,10 @@ const canvas = d3.select(".canva");
 
 // var dataArray = [4, 15, 34, 124, 23];
 var dataArray = [
-    {width: 25, height: 15, fill: 'pinl'},
-    {width: 25, height: 25, fill: 'pinl'},
-    {width: 25, height: 115, fill: 'pinl'},
-    {width: 25, height: 5, fill: 'pinl'},
+    {width: 25, height: 15, fill: 'pink'},
+    {width: 25, height: 25, fill: 'purple'},
+    {width: 25, height: 115, fill: 'red'},
+    {width: 25, height: 5, fill: 'grey'},
     {width: 25, height: 35, fill: 'pinl'},
 ];
 
@@ -24,7 +24,10 @@ rect.data(dataArray)
     .attr("height", function(d) {
     return d.height*2;
     })
-    .attr("fill", "green")
+    .attr("fill", function(d){
+        return d.fill;
+
+    })
     .attr("x", function(d , i) { 
         return i*27 } )
     .attr("y", function(d, i) {
