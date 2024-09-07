@@ -2,29 +2,18 @@ import * as d3 from 'd3';
 
 const canvas = d3.select(".canva");
 
-var dataArray = [4, 15, 34];
-
-// const svg = canvas.append("svg")
-//             // .attr('width', "50%")
-//             .attr("width", 500)
-//             .attr('height', 550);
+var dataArray = [4, 15, 34, 124, 230];
 
 const svg = canvas.select("svg")
 
-
 const rect = svg.selectAll("rect");
-// const rect = svg.append("rect");
 
-
-    // .attr("y", function(d, i) {
-    //     console.log(i);
-    //     return d;
-    // })
-
-rect.attr("width", 25)
-    .data(dataArray)
+rect.data(dataArray)
+    .enter().append("rect")
+    .attr("width", 25)
     .attr("height", function(d) {
-        return d * 2;
+    return d*2 ;
+
     })
     .attr("fill", "green")
     .attr("x", function(d , i) { 
