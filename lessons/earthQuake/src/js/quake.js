@@ -28,13 +28,13 @@ d3.json(api_url)
                 .attr("cx", (d, i) => (d.properties.mag)*23)
                 .attr("cy", (d, i) => Math.floor(Math.random()*100 +d.properties.mag))
                 // .attr("r", (d, i) => d.properties.mag)
-                .attr("r", function(d, i, n) {
-                        // console.log(d3.select(n[i]));
+                .attr("r", function(d, i, node) {
+                        console.log(d3.select(node[i]));
                         return d.properties.mag;
                 })
                 .style('top', 125)
-                .on("mouseover", function (d, i, n) {
-                        console.log(d3.select(n[i]));
+                .on("mouseover", function (d, i, node) {
+                        console.log(d3.select(node[i]));
                         d3.select(n[i]) .transition()
                         .duration(100)
                         .style("opacity", 0.5)}
