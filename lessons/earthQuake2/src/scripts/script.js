@@ -11,6 +11,9 @@ const svg = canvas.append('svg')
             .attr("width", width)
             .attr("height", height);
 
+var div = d3.select("body").append("div")
+                .attr("class", "tooltip")
+                .style("opacity", 0)
 
 d3.json(api_url)
     .then(data => {
@@ -18,7 +21,6 @@ d3.json(api_url)
                         .data(data.features);
 
             
-        // console.log(data.features);
         circle.attr("cx", (d, i) => d.properties.mag)
                 .attr("cy", (d, i) => Math.floor(Math.random()*100 +d.properties.mag))
                 .attr("r", (d, i) => d.properties.mag)
@@ -30,21 +32,20 @@ d3.json(api_url)
                 .attr("cy", (d, i) => Math.floor(Math.random()*100 +d.properties.mag))
                 .attr("r", (d, i) => d.properties.mag)
                 .attr("r", function(d, i, node) {
-                        // console.log(d3.select(node[i]));
                         return d.properties.mag;
                 })
                 .style('top', 125)
-                // .on("mouseover", function (d, i, node) {
-                //         console.log(d3.select(node[i]));
-                //         d3.select(node[i]) .transition()
-                //         .duration(100)
-                //         .style("opacity", 0.5)}
-                // )
                 .on("mouseover", handleMouseOver)
                 .attr("fill", (d, i) => d.properties.alert);
 
                 function handleMouseOver(event) {
                         console.log(event);
                         d3.select(event.currentTarget).style("opacity", 0.3);
+                        console.log(event.currentTarget.__data__.properties.mag);
+
+                        div.transition()
+                                .duration(200)
+                                .style("opacity", 0.9);
+                        div.html("hello world");
                 }
     })
