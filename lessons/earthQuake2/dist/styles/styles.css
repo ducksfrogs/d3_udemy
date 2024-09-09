@@ -1,0 +1,14 @@
+body {
+  display: block;
+  margin: auto;
+}
+
+div.tooltip {
+  background: lightcyan;
+  font-size: 12px;
+  height: 100px;
+  padding: 2px;
+  position: absolute;
+  text-align: left;
+  width: 100px;
+}

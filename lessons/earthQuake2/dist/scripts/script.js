@@ -12,10 +12,11 @@ d3.json(api_url).then(data => {
     return d.properties.mag;
   }).style('top', 125).on("mouseover", handleMouseOver).attr("fill", (d, i) => d.properties.alert);
   function handleMouseOver(event) {
+    var mag = event.currentTarget.__data__.properties.mag;
     console.log(event);
     d3.select(event.currentTarget).style("opacity", 0.3);
-    console.log(event.currentTarget.__data__.properties.mag);
+    console.log(mag);
     div.transition().duration(200).style("opacity", 0.9);
-    div.html("hello world");
+    div.html("<p> " + mag + "</p>").style("left", event.pageX + "px").style("top", event.pageY + "px");
   }
 });
