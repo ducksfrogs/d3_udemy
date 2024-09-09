@@ -28,18 +28,23 @@ d3.json(api_url)
                 .append("circle")
                 .attr("cx", (d, i) => (d.properties.mag)*23)
                 .attr("cy", (d, i) => Math.floor(Math.random()*100 +d.properties.mag))
-                // .attr("r", (d, i) => d.properties.mag)
+                .attr("r", (d, i) => d.properties.mag)
                 .attr("r", function(d, i, node) {
-                        console.log(d3.select(node[i]));
+                        // console.log(d3.select(node[i]));
                         return d.properties.mag;
                 })
                 .style('top', 125)
-                .on("mouseover", function (d, i, node) {
-                        console.log(d3.select(node[i]));
-                        d3.select(n[i]) .transition()
-                        .duration(100)
-                        .style("opacity", 0.5)}
-                )
-
+                // .on("mouseover", function (d, i, node) {
+                //         console.log(d3.select(node[i]));
+                //         d3.select(node[i]) .transition()
+                //         .duration(100)
+                //         .style("opacity", 0.5)}
+                // )
+                .on("mouseover", handleMouseOver)
                 .attr("fill", (d, i) => d.properties.alert);
+
+                function handleMouseOver(event) {
+                        console.log(event);
+                        d3.select(event.currentTarget).style("opacity", 0.3);
+                }
     })
