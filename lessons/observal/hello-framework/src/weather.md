@@ -46,6 +46,7 @@ function temperaturePlot(data, {width} = {}) {
     ]
   });
 }
+console.log(forecast);
 ```
 
 ```js
