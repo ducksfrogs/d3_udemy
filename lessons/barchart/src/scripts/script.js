@@ -3,8 +3,8 @@ import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 const canvas = d3.select(".canva");
 
 const svg = canvas.append("svg")
-                    .attr('height', 400)
-                    .attr('width', 400);
+                    .attr('height', 600)
+                    .attr('width', 600);
 
 
 const rect = svg.selectAll("rect");
@@ -20,11 +20,17 @@ d3.json("test.json")
                 console.log(y(250));
                 console.log(y(500));
 
+        const x = d3.scaleBand()
+                        .domain(data.map(item => item.fill))
+                        .range([0, 500]);
+
+        console.log(x.bandwidth());
+
             rect.data(data)
                     .enter().append("rect")
-                    .attr("width", (d, i) => d.width)
+                    .attr("width", x.bandwidth)
                     .attr("height", (d, i) => y(d.height))
                     .attr("fill", (d) => d.fill)
-                    .attr("x", (d, i) => i * 26)
+                    .attr("x", (d, i) => x(d.fill))
                     
         })
