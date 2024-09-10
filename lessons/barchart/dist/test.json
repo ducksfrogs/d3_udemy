@@ -1,7 +1,7 @@
  [
-    {"width": 25, "height": 15, "fill": "pink"},
-    {"width": 25, "height": 15, "fill": "grey"},
+    {"width": 25, "height": 15, "fill": "magenta"},
+    {"width": 25, "height": 45, "fill": "grey"},
     {"width": 25, "height": 150, "fill": "pink"},
-    {"width": 25, "height": 140, "fill": "green"},
-    {"width": 25, "height": 15, "fill": "green"}
+    {"width": 25, "height": 940, "fill": "green"},
+    {"width": 25, "height": 25, "fill": "blue"}
 ]
