@@ -1,6 +1,6 @@
  [
-    {"width": 25, "height": 15, "fill": "magenta"},
-    {"width": 25, "height": 45, "fill": "grey"},
+    {"width": 25, "height": 55, "fill": "magenta"},
+    {"width": 25, "height": 500, "fill": "rebeccapurple"},
     {"width": 25, "height": 45, "fill": "grey"},
     {"width": 25, "height": 450, "fill": "orange"},
     {"width": 25, "height": 85, "fill": "black"},

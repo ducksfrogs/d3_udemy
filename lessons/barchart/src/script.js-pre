@@ -15,6 +15,9 @@ const graph = svg.append("g")
                 .attr("height", graphHeight)
                 .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
+                console.log(graphHeight);
+                console.log(graphWidht);
+                console.log(graph);
 const rect = graph.selectAll("rect");
 
 const xAxisGroup = graph.append("g")
@@ -26,49 +29,35 @@ const yAxisGroup = graph.append("g");
 
 d3.json("test.json")
         .then(data => {
+                console.log(data);
                 const y = d3.scaleLinear()
                                 .domain([0, d3.max(data, d => d.height)])
                                 .range([graphHeight, 0]);
 
+                // console.log(y(0));
+                // console.log(y(250));
+                // console.log(y(500));
 
         const x = d3.scaleBand()
                         .domain(data.map(item => item.fill))
                         .range([0, 500])
-                        .paddingInner(0.1)
-                        .paddingOuter(.4);
+                        .paddingInner(0.1);
+                        // .paddingOuter(k.4);
 
-                        console.log(x.bandwidth());
-                        const xAxis = d3.axisBottom(x);
-                        const yAxis = d3.axisLeft(y);
-
-                xAxisGroup.call(xAxis);
-                yAxisGroup.call(yAxis);
+        // console.log(x.bandwidth());
 
             rect.data(data)
                     .enter().append("rect")
                     .attr("width", x.bandwidth)
-                    .transition()
-                        .attr("y", d => y(d.height))
-                        .delay(function(d, i) {
-                                return i*100;
-                        })
-                        .ease(d3.easeBounceOut)
                     .attr("height", (d, i) => graphHeight - y(d.height))
                     .attr("fill", (d) => d.fill)
                     .attr("x", (d, i) => x(d.fill))
-                    .attr("y", (d) => y(d.height))
-                    .on("mouseover",  function(event){
-                        d3.select(event.currentTarget)
-                                .transition()
-                                .duration(100)
-                                .style('opacity', 0.5)
-                    })
-                    .on("mouseout",  function(event){
-                        d3.select(event.currentTarget)
-                                .transition()
-                                .duration(100)
-                                .style('opacity', 1)
-                    });
+                    .attr("y", d => y(d.height));
 
+                const xAxis = d3.axisBottom(x);
+                const yAxis = d3.axisLeft(y);
+
+                xAxisGroup.call(xAxis);
+                yAxisGroup.call(yAxis);
                     
         })
