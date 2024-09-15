@@ -85,9 +85,8 @@ const scripts = function() {
         }
     ).
         pipe(babel()).
-        pipe(uglify()).
+        // pipe(uglify()).
         pipe(rename({
-            'suffix': '.min',
         })).
         pipe(gulp.dest(paths.scripts.dest)).
         pipe(connect.reload());
