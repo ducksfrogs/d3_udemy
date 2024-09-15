@@ -13,6 +13,6 @@ const svg = canvas.append("svg").attr("width", width).attr("height", height).att
 d3.csv("./data/abc.csv").then(data => {
   console.log(data);
   const x = d3.scaleBand().domain(d3.groupSort(data, ([d]) => -d.frequency, d => d.letter)).range([margin.left, width - margin.right]).padding(0.1);
-  const y = d3.scaleLinear().domain([0, d3.max(data, d => d.frequency())]).range([height - margin.bottom, margin.top]);
+  const y = d3.scaleLinear().domain([0, d3.max(data, d => d.frequency)]).range([height - margin.bottom, margin.top]);
   svg.append("g").attr("fill", "seelblue").selectAll().data(data).join("rect").attr("x", d => x(d.letter)).attr("y", d => y(d.frequency)).attr("height", d => y(0) - y(d.frequency)).attr("width", x.bandwidth());
 });

@@ -27,7 +27,7 @@ d3.csv("./data/abc.csv")
                     .padding(0.1);
 
         const y = d3.scaleLinear()
-                    .domain([0, d3.max(data, (d) => d.frequency())])
+                    .domain([0, d3.max(data, (d) => d.frequency)])
                     .range([height - margin.bottom, margin.top]);
         svg.append("g")
             .attr("fill", "seelblue")
