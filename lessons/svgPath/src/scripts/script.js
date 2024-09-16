@@ -21,7 +21,7 @@ var months = ["January", "February", "March", "April", "May",
               "November", "December"];
 
 var parseMonths = d3.timeParse("%B");
-
+console.log([parseMonths])
 const svg = canvas.append("svg")
             .attr('width', 600)
             .attr('height', 660);
@@ -40,6 +40,8 @@ const mainCanvas = svg.append("g")
 var x = d3.scaleTime()
                     .domain(d3.extent(months, (d) => parseMonths(d)))
                     .range([0, graphWidth])
+
+console.log(x);
 
 var y = d3.scaleLinear()
                     .range([graphHeight, 0])
