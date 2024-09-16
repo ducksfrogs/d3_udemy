@@ -1,3 +1,8 @@
+# test third
+<div class="canva"> </div>
+
+```js
+
  var dataset = [
     [1, 15],
     [5, 25],
@@ -17,7 +22,7 @@
   var margin = { "top": 30, "bottom": 60, "right": 30, "left": 60 };
  
   // 2. SVG領域の設定
-  var svg = d3.select("body").append("svg").attr("width", width).attr("height", height);
+  var svg = d3.select(".canva").append("svg").attr("width", width).attr("height", height);
  
   // 3. 軸スケールの設定
   var xScale = d3.scaleLinear()
@@ -76,3 +81,4 @@
       .x(function(d) { return xScale(d[0]); })
       .y(function(d) { return yScale(d[1]); })
     );
+```
